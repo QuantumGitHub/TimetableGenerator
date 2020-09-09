@@ -1,5 +1,6 @@
 # ICS Timetable Generator
 > Create a pdf (/latex) timetable from an ics calendar
+This is a fork from the original project of jeangii90. There are minor changes to LaTeX style and formatting. 
 
 ## Introduction
 Create a 5 days timetables of repeated events (e.g. lectures) automatically from a `.ics` calendar.\
