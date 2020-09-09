@@ -1,5 +1,7 @@
 This is a fork from the original project of jeangii90. All credit goes to him. There are minor changes to LaTeX style and formatting. 
 
+There is also a issue with overlapping lectures. If you have none, you're fine.
+
 # ICS Timetable Generator
 > Create a pdf (/latex) timetable from an ics calendar
 
