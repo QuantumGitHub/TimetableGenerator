@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys
 import os
 import getopt
@@ -28,10 +29,12 @@ def readFromIcs(calendarPath):
                                 component.get('dtend').dt,
                                 component.get('location'))
 
-                days[event.start.weekday()][event.start.hour] = event
+                #days[event.start.weekday()][int(event.start.hour)] = event
+                days[event.start.weekday()][event.start.hour+event.start.minute / 100] = event
                 event.description = ""      # Ignore description
 
-    return days    
+    return days 
+
 
 def writeToTemplate(templatePath, days):
     """

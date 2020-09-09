@@ -2,12 +2,13 @@
 %See http://tex.stackexchange.com/q/268780/82389
 \documentclass[crop, tikz]{standalone}
 \usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
 \usepackage{tikz}
 \usetikzlibrary{shapes.multipart}
 
 %Options for timetable contents
 \def\firsthour{8}
-\def\lasthour{17}
+\def\lasthour{18}
 \def\daynames{Monday, Tuesday, Wednesday, Thursday, Friday}
 
 %Options for timetable drawing
@@ -32,9 +33,9 @@
         rectangle split, rectangle split parts=3,
         text width=0.95*\daywidth
     },
-    name/.style ={font=\normalsize},
-    desc/.style ={font=\small\itshape},
-    loc/.style  ={font=\small},
+    name/.style ={font=\small},
+    desc/.style ={font=\small\itshape\bfseries},
+    loc/.style  ={font=\footnotesize\itshape},
     hours/.style={minimum height=#1*\hourheight}
 ]
 
@@ -61,8 +62,8 @@
     \node[{{event.title}}, hours={{event.duration}}] at ( {{ dayloop.index }} , {{ y }} ) {};
 
     \node[event details] at ( {{ dayloop.index }} , {{ y }} ) {
-        \nodepart[name]{one}   \strut {{ event.title }} 
-        \nodepart[desc]{two}   \strut {{ event.description }}
+        \nodepart[desc]{one}   \strut {{time}} - {{time + event.duration}}
+        \nodepart[name]{two}   \strut {{ event.title }} 
         \nodepart[loc] {three} \strut {{ event.location }}
     };
     {%- endfor %}

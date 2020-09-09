@@ -26,5 +26,12 @@ class Event:
         text = text.replace('ö', 'oe').replace('Ö', 'Oe')
         text = text.replace('ü', 'ue').replace('Ü', 'Ue')
         text = text.replace('ä', 'ae').replace('Ä', 'Ae')
+        
+        '''
+        There is a problem with this kind of formating later in the compilation process
 
+        text = text.replace('ö', '\\"{o}').replace('Ö', '\\"{O}')
+        text = text.replace('ü', '\\"{u}').replace('Ü', '\\"{U}')
+        text = text.replace('ä', '\\"{a}').replace('Ä', '\\"{A}')
+        '''
         return text.strip()
